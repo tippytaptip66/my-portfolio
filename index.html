@@ -1,93 +1,71 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Elmer — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  
-   <!-- Step 1: Zipper Screen -->
+
+  <!-- Zipper screen (must be first in <body>) -->
   <div id="zipper-screen">
     <div class="zipper-left"></div>
     <div class="zipper-right"></div>
-    <div id="zipper-handle">🔽</div>
+    <div id="zipper-handle" role="button" aria-label="Unzip handle" tabindex="0">🔽</div>
   </div>
-  
-<header class="header">
-  <img src="profile.jpg" alt="My Photo" class="profile-pic" />
-  
-  <h1>
-    <span id="typewriter"></span>
-  </h1>
 
-<!-- Zipper Screen -->
-<div id="zipper-screen">
-  <div class="zipper-left"></div>
-  <div class="zipper-right"></div>
-  <div id="zipper-handle">🔽</div>
-</div>
+  <!-- Main content -->
+  <header class="header">
+    <img src="profile.jpg" alt="My Photo" class="profile-pic" />
+    <h1><span id="typewriter"></span></h1>
+    <p class="fade-in delay">A second-year Computer Science student who’s passionate about building things that make sense in the real world. This website is part of our Web Design subject.</p>
+    <a href="#projects" class="btn fade-in delay2">View My Works</a>
+  </header>
 
-  
-  <p class="fade-in delay">
-    A second-year Computer Science student who’s passionate about creating mobile application and websites. 
-    This website is part of our Web Design subject.
-  </p>
-  
-  <a href="#projects" class="btn fade-in delay2">View My Works</a>
-</header>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>Learning to build responsive websites with HTML, CSS, and JavaScript. This portfolio showcases my work.</p>
+    </section>
 
-
-
- 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      Learning to build responsive websites with HTML, CSS, and JavaScript. 
-      This website showcases my work.
-    </p>
-  </section>
-
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects-grid">
-      <div class="card">
-        <h3>Coming soon!</h3>
-        <p>Coming soon!</p>
-        <a href="#" target="_blank">View Project</a>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        <div class="card">
+          <h3>Coming soon!</h3>
+          <p>Coming soon!</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="card">
+          <h3>Coming soon!</h3>
+          <p>Coming soon!</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
+        <div class="card">
+          <h3>Coming soon!</h3>
+          <p>Coming soon!</p>
+          <a href="#" target="_blank">View Project</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>Coming soon!</h3>
-        <p>Coming soon!</p>
-        <a href="#" target="_blank">View Project</a>
-      </div>
-      <div class="card">
-        <h3>Coming soon!</h3>
-        <p>Coming soon!</p>
-        <a href="#" target="_blank">View Project</a>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="program">
-    <h2>Text ↔ Binary Converter</h2>
-    <textarea id="textInput" placeholder="Enter text or binary..."></textarea>
-    <div class="program-buttons">
-      <button onclick="textToBinary()">Text ➡ Binary</button>
-      <button onclick="binaryToText()">Binary ➡ Text</button>
-    </div>
-    <textarea id="output" placeholder="Output..." readonly></textarea>
-  </section>
+    <section id="program">
+      <h2>Text ↔ Binary Converter</h2>
+      <textarea id="textInput" placeholder="Enter text or binary..."></textarea>
+      <div class="program-buttons">
+        <button id="btnTextToBinary">Text ➡ Binary</button>
+        <button id="btnBinaryToText">Binary ➡ Text</button>
+        <button id="btnCopyOutput">Copy Output</button>
+      </div>
+      <textarea id="output" placeholder="Output..." readonly></textarea>
+    </section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Feel free to reach out: <a href="https://www.yahoo.com/">elmer.vidal@yahoo.com </a></p>
-    <p>FB: <a href="https://www.facebook.com/mer.bacoro/">Elmer Vidal Bacoro </a></p>
-  </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out: <a href="mailto:elmer.vidal@yahoo.com">elmer.vidal@yahoo.com</a></p>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Deulshin</p>
@@ -96,15 +74,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
