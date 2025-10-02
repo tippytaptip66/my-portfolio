@@ -16,7 +16,7 @@ body {
 .header {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #0077cc, #00c6ff);
+  background: linear-gradient(135deg, #7e3ff2, #b966ff);
   color: white;
 }
 .header h1 {
@@ -39,16 +39,27 @@ body {
   margin-top: 1.5rem;
   padding: 0.75rem 1.5rem;
   background: white;
-  color: #0077cc;
+  color: #7e3ff2;
   text-decoration: none;
   border-radius: 25px;
   font-weight: bold;
-  transition: transform 0.2s, background 0.3s;
+  transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
 }
 .btn:hover {
   transform: scale(1.05);
   background: #ffeb3b;
-  color: #0077cc;
+  color: #7e3ff2;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Typewriter effect cursor */
+#typewriter {
+  border-right: 2px solid white;
+  display: inline-block;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  50% { border-color: transparent; }
 }
 
 /* Sections */
@@ -58,7 +69,7 @@ section {
 }
 section h2 {
   margin-bottom: 1rem;
-  color: #0077cc;
+  color: #7e3ff2;
 }
 
 /* Projects */
@@ -84,7 +95,7 @@ section h2 {
 .card a {
   display: inline-block;
   margin-top: 1rem;
-  color: #0077cc;
+  color: #7e3ff2;
   text-decoration: none;
   font-weight: bold;
 }
@@ -95,7 +106,7 @@ section h2 {
   height: 100px;
   margin: 1rem 0;
   padding: 1rem;
-  border: 2px solid #0077cc;
+  border: 2px solid #7e3ff2;
   border-radius: 10px;
   resize: none;
 }
@@ -104,14 +115,14 @@ section h2 {
   padding: 0.75rem 1.5rem;
   border: none;
   border-radius: 8px;
-  background: #0077cc;
+  background: #7e3ff2;
   color: white;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
 }
 .program-buttons button:hover {
-  background: #005fa3;
+  background: #5a2bb3;
   transform: scale(1.05);
 }
 
@@ -119,7 +130,7 @@ section h2 {
 footer {
   text-align: center;
   padding: 1rem;
-  background: #0077cc;
+  background: #7e3ff2;
   color: white;
 }
 
@@ -137,4 +148,10 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .header h1 { font-size: 1.8rem; }
+  .profile-pic { width: 100px; height: 100px; }
 }
