@@ -27,6 +27,15 @@ function typeWriter() {
 
 window.onload = typeWriter;
 
+// Preloader fade out
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  preloader.classList.add("fade-out");
+
+  setTimeout(() => {
+    preloader.style.display = "none";
+  }, 600); // matches CSS transition time
+});
 
 // Text ↔ Binary Converter
 function textToBinary() {
@@ -46,6 +55,7 @@ function binaryToText() {
     document.getElementById("output").value = "Invalid binary input!";
   }
 }
+
 
 
 
