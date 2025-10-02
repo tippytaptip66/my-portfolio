@@ -17,7 +17,7 @@ body {
   text-align: center;
   padding: 4rem 2rem;
   background: #75e6c9;
-background: radial-gradient(circle,rgba(117, 230, 201, 1) 0%, rgba(64, 150, 255, 1) 100%);
+background: radial-gradient(circle, rgba(117, 230, 201, 1) 0%, rgba(148, 196, 255, 1) 100%);
   color: white;
 }
 .header h1 {
@@ -156,4 +156,5 @@ footer {
   .header h1 { font-size: 1.8rem; }
   .profile-pic { width: 100px; height: 100px; }
 }
+
 
