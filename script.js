@@ -15,7 +15,7 @@ faders.forEach(fader => appearOnScroll.observe(fader));
 
 // Typewriter effect
 const typewriter = document.getElementById("typewriter");
-const words = ["Compsci student", "Problem Solver", "Tech "];
+const words = ["Web Developer", "Problem Solver", "Tech Enthusiast"];
 let wordIndex = 0;
 let charIndex = 0;
 let currentWord = "";
@@ -60,3 +60,4 @@ function binaryToText() {
     document.getElementById("output").value = "Invalid binary input!";
   }
 }
+
