@@ -14,33 +14,19 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
 faders.forEach(fader => appearOnScroll.observe(fader));
 
 // Typewriter effect
-const typewriter = document.getElementById("typewriter");
-const words = ["Web Developer", "Problem Solver", "Tech Enthusiast"];
-let wordIndex = 0;
-let charIndex = 0;
-let currentWord = "";
-let isDeleting = false;
+const text = "Hi, my name is Elmer Bacoro. \nA second-year Computer Science student who's passionate about building things that make sense in the real world. This website is part of our Web Design subject  👋";
+let i = 0;
 
-function typeEffect() {
-  currentWord = words[wordIndex];
-  if (isDeleting) {
-    typewriter.textContent = currentWord.substring(0, charIndex--);
-  } else {
-    typewriter.textContent = currentWord.substring(0, charIndex++);
-  }
-
-  if (!isDeleting && charIndex === currentWord.length) {
-    isDeleting = true;
-    setTimeout(typeEffect, 1000);
-  } else if (isDeleting && charIndex === 0) {
-    isDeleting = false;
-    wordIndex = (wordIndex + 1) % words.length;
-    setTimeout(typeEffect, 500);
-  } else {
-    setTimeout(typeEffect, isDeleting ? 50 : 100);
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typewriter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 50); // speed (ms) → 100ms per letter
   }
 }
-typeEffect();
+
+window.onload = typeWriter;
+
 
 // Text ↔ Binary Converter
 function textToBinary() {
@@ -60,4 +46,5 @@ function binaryToText() {
     document.getElementById("output").value = "Invalid binary input!";
   }
 }
+
 
