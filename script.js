@@ -14,7 +14,7 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
 faders.forEach(fader => appearOnScroll.observe(fader));
 
 // Typewriter effect
-const text = "Hi, my name is Elmer Bacoro. \nA second-year Computer Science student who's passionate about building things that make sense in the real world. This website is part of our Web Design subject  👋";
+const text = "Good Day!👋";
 let i = 0;
 
 function typeWriter() {
@@ -46,5 +46,6 @@ function binaryToText() {
     document.getElementById("output").value = "Invalid binary input!";
   }
 }
+
 
 
