@@ -1,4 +1,4 @@
-// Smooth fade-in effect on scroll
+// ==================== Fade-in on Scroll ====================
 const faders = document.querySelectorAll('.fade-in');
 const appearOptions = {
   threshold: 0.2,
@@ -11,9 +11,11 @@ const appearOnScroll = new IntersectionObserver(function(entries, observer) {
     observer.unobserve(entry.target);
   });
 }, appearOptions);
+
 faders.forEach(fader => appearOnScroll.observe(fader));
 
-// Typewriter effect
+
+// ==================== Typewriter Effect ====================
 const text = "Hello, my name is Elmer Bacoro 👋";
 let i = 0;
 
@@ -21,23 +23,12 @@ function typeWriter() {
   if (i < text.length) {
     document.getElementById("typewriter").innerHTML += text.charAt(i);
     i++;
-    setTimeout(typeWriter, 50); // speed (ms) → 100ms per letter
+    setTimeout(typeWriter, 50); // speed per letter
   }
 }
 
-window.onload = typeWriter;
 
-// Preloader fade out
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("preloader");
-  preloader.classList.add("fade-out");
-
-  setTimeout(() => {
-    preloader.style.display = "none";
-  }, 600); // matches CSS transition time
-});
-
-// Text ↔ Binary Converter
+// ==================== Text ↔ Binary Converter ====================
 function textToBinary() {
   const text = document.getElementById("textInput").value;
   const binary = text.split("")
@@ -57,6 +48,52 @@ function binaryToText() {
 }
 
 
+// ==================== Zipper Preloader ====================
+const handle = document.getElementById("zipper-handle");
+const left = document.querySelector(".zipper-left");
+const right = document.querySelector(".zipper-right");
+const screen = document.getElementById("zipper-screen");
 
+let isDragging = false;
+let startY = 0;
 
+handle.addEventListener("mousedown", (e) => {
+  isDragging = true;
+  startY = e.clientY;
+});
 
+document.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+
+  let dragDistance = e.clientY - startY;
+
+  if (dragDistance > 0) {
+    // Move zipper panels apart
+    left.style.transform = `translateX(${-dragDistance}px)`;
+    right.style.transform = `translateX(${dragDistance}px)`;
+    handle.style.top = dragDistance + "px";
+  }
+});
+
+document.addEventListener("mouseup", () => {
+  if (!isDragging) return;
+  isDragging = false;
+
+  let dragDistance = parseInt(handle.style.top);
+
+  if (dragDistance > window.innerHeight / 2) {
+    // ✅ If dragged far enough → fully open
+    left.style.transform = "translateX(-100%)";
+    right.style.transform = "translateX(100%)";
+    handle.style.display = "none";
+    setTimeout(() => {
+      screen.style.display = "none";
+      typeWriter(); // Start typewriter only AFTER unzip
+    }, 800);
+  } else {
+    // Reset if not dragged enough
+    left.style.transform = "translateX(0)";
+    right.style.transform = "translateX(0)";
+    handle.style.top = "0px";
+  }
+});
