@@ -1,4 +1,4 @@
-// Typewriter effect
+
 const text = "Hi, my name is Elmer Bacoro 👋";
 let i = 0;
 
@@ -6,13 +6,13 @@ function typeWriter() {
   if (i < text.length) {
     document.getElementById("typewriter").innerHTML += text.charAt(i);
     i++;
-    setTimeout(typeWriter, 100); // 100ms per letter
+    setTimeout(typeWriter, 100); 
   }
 }
 
 window.onload = typeWriter;
 
-// Text to Binary
+
 function textToBinary() {
   const text = document.getElementById("textInput").value;
   let binary = "";
@@ -22,7 +22,7 @@ function textToBinary() {
   document.getElementById("output").value = binary.trim();
 }
 
-// Binary to Text
+
 function binaryToText() {
   const binary = document.getElementById("textInput").value.trim().split(" ");
   let text = "";
@@ -33,3 +33,4 @@ function binaryToText() {
   }
   document.getElementById("output").value = text;
 }
+
